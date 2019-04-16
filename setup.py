@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(name='syslog_analytics',
-                 version='0.0.2',
+                 version='0.0.3',
                  entry_points={
                      'console_scripts': ['syslog_analytics=syslog_analytics.main:main'],
                  },
