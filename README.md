@@ -40,7 +40,7 @@ Process csv files in the format:
 
 ## Installation
 
-    python3 -m pip install -U --index-url https://test.pypi.org/simple/ --no-deps syslog_analytics
+    python3 -m pip install -U --index-url https://test.pypi.org/simple/ syslog_analytics
 
 ## Usage
 
