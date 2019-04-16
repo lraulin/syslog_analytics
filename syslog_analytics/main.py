@@ -34,7 +34,6 @@ def transform_row(row):
 
     message = row[3]
     ip_match = CLIENT_IP_PATTERN.search(message)
-    print(ip_match)
     row_data["IP"] = ip_match.group(1) if ip_match else "!!! NO MATCH !!!"
     domain_match = QUERY_DOMAIN_PATTERN.search(message)
     row_data["DOMAIN"] = domain_match.group(
