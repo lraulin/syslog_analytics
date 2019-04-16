@@ -23,15 +23,17 @@ Process csv files in the format:
 ### Output
 
 <table class="table table-bordered table-hover table-condensed">
-<thead><tr><th title="Field #1">Time</th>
-<th title="Field #2">Event Type</th>
-<th title="Field #3">Sensor</th>
-<th title="Field #4">Message</th>
+<thead><tr><th title="Field #1">DATE</th>
+<th title="Field #2">TIME</th>
+<th title="Field #3">IP ADDRESS OF THE CLIENT</th>
+<th title="Field #4">QUERY DOMAIN</th>
+<th title="Field #5">MESSAGE</th>
 </tr></thead>
 <tbody><tr>
-<td>Apr 4, 2019 14:00:28 UTC</td>
-<td>dns</td>
-<td>syslog.idn.dot.gov-network</td>
+<td>04/04/2019</td>
+<td>14:00:28 UTC</td>
+<td>152.120.186.45</td>
+<td>sstats.arstechnica.com</td>
 <td>&lt;174&gt;Apr  4 14:00:28 152.120.4.100 named[7604]: 04-Apr-2019 10:00:28.461 queries: info: client 152.120.186.45#54250 (sstats.arstechnica.com): query: sstats.arstechnica.com IN A + (152.120.4.100)</td>
 </tr>
 </tbody></table>
