@@ -31,10 +31,10 @@ Process csv files in the format:
 </tr></thead>
 <tbody><tr>
 <td>04/04/2019</td>
-<td>14:00:28 UTC</td>
-<td>152.120.186.45</td>
-<td>sstats.arstechnica.com</td>
-<td>&lt;174&gt;Apr  4 14:00:28 152.120.4.100 named[7604]: 04-Apr-2019 10:00:28.461 queries: info: client 152.120.186.45#54250 (sstats.arstechnica.com): query: sstats.arstechnica.com IN A + (152.120.4.100)</td>
+<td>14:10:20 UTC</td>
+<td>152.120.120.143</td>
+<td>www.cybrary.it</td>
+<td>&lt;174&gt;Apr  4 14:10:20 152.120.3.200 named[21871]: 04-Apr-2019 10:10:20.760 queries: info: client 152.120.120.143#55623 (www.cybrary.it): query: www.cybrary.it IN A + (152.120.3.200)</td>
 </tr>
 </tbody></table>
 

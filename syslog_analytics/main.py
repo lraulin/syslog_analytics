@@ -4,6 +4,7 @@ import datetime
 from sys import argv
 import re
 from itertools import chain
+from operator import itemgetter
 
 DATE_FORMAT = "%m/%d/%Y"  # 04/16/2016
 TIME_FORMAT = "%H:%M:%S %Z"  # 20:36:05.
@@ -22,6 +23,7 @@ def get_rows(csv_file):
 
 def transform_row(row):
     row_data = {
+        "EPOCH": None,
         "DATE": None,
         "TIME": None,
         "IP": None,
@@ -29,6 +31,8 @@ def transform_row(row):
     }
 
     dt = dateparser.parse(row[0])
+
+    row_data["EPOCH"] = dt.timestamp()
     row_data["DATE"] = dt.strftime(DATE_FORMAT)
     row_data["TIME"] = dt.strftime(TIME_FORMAT)
 
@@ -39,7 +43,7 @@ def transform_row(row):
     row_data["DOMAIN"] = domain_match.group(
         1) if domain_match else "!!! NO MATCH !!!"
 
-    new_row = [row_data["DATE"], row_data["TIME"],
+    new_row = [row_data["EPOCH"], row_data["DATE"], row_data["TIME"],
                row_data["IP"], row_data["DOMAIN"], message]
     return new_row
 
@@ -50,7 +54,9 @@ def main():
     rows = [row for row in chain.from_iterable(
         [get_rows(file) for file in files])]
 
-    new_rows = [HEADERS] + [transform_row(row) for row in rows]
+    new_rows = [transform_row(row) for row in rows]
+    new_rows = sorted(new_rows, key=itemgetter(0))
+    new_rows = [HEADERS] + [row[1:] for row in new_rows]
 
     with open('output.csv', 'w', newline='') as f:
         writer = csv.writer(f)
