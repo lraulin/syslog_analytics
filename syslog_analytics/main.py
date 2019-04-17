@@ -26,11 +26,6 @@ def get_rows(csv_file):
     return rows[1:]
 
 
-def is_header(row):
-    """Return True if row is header in input format."""
-    return "Time" in row[0] and "Event" in row[1] and "Sensor" in row[2]
-
-
 def transform_row(row):
     """Process a row (list) in input format and return in output format."""
 
@@ -86,7 +81,7 @@ def main():
     rows = [row for row in chain.from_iterable(
         [get_rows(file) for file in files])]
 
-    new_rows = [transform_row(row) for row in rows if not is_header(row)]
+    new_rows = [transform_row(row) for row in rows]
     new_rows = sorted(new_rows, key=itemgetter(0))
     new_rows = [HEADERS] + [row[1:] for row in new_rows]
 
