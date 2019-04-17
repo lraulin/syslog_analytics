@@ -1,7 +1,8 @@
+import argparse
 import csv
 import dateparser
 import datetime
-from sys import argv
+import pkg_resources
 import re
 from itertools import chain
 from operator import itemgetter
@@ -49,7 +50,22 @@ def transform_row(row):
 
 
 def main():
-    files = argv[1:]
+    parser = argparse.ArgumentParser()
+    parser.add_argument('files', metavar='files', type=str,
+                        nargs='*', help='One or more csv files to process'),
+    parser.add_argument('-v', '--version', action='store_true',
+                        dest='version', help='Display version number')
+    args = parser.parse_args()
+
+    if not any(vars(args).values()):
+        print('No arguments provided.')
+        parser.print_help()
+
+    if args.version:
+        version = pkg_resources.require('syslog_analytics')[0].version
+        print(f'syslog_analytics v{version}')
+
+    files = args.files
 
     rows = [row for row in chain.from_iterable(
         [get_rows(file) for file in files])]
