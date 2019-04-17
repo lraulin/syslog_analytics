@@ -47,3 +47,7 @@ Process csv files in the format:
     syslog_analytics *.csv
 
 Arguments will be treated as a list of csv files to be processed. The results from all files will be combined into a single output file.
+
+## Assumptions
+
+Input files are csv files as shown above. Files contain a header. The first column contains a date/time (any standard format should be ok). The third column contains the message to be parsed. Messages contain an IP proceeded by the string "client " and followed by "#" and a domain name between "query: " and "IN". Deviation from these assumptions may produce unexpected results.
