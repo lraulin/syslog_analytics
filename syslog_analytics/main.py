@@ -59,8 +59,9 @@ def main():
     # Set up command-line arguments with argparse.
     parser = argparse.ArgumentParser(
         description='Process one or more csv files. Save results to output.csv in the current directory.')
-    parser.add_argument('files', metavar='files', type=str,
+    parser.add_argument('files', metavar='files', type=argparse.FileType('r'),
                         nargs='*', help='one or more csv files to process'),
+    parser.add_argument('-o', '--outfile', type=str, nargs='?', type=argparse.FileType('w')),
     parser.add_argument('-v', '--version', action='store_true',
                         dest='version', help='display version number')
     args = parser.parse_args()

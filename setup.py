@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(name='syslog_analytics',
-                 version='0.0.4',
+                 version='0.0.5',
                  entry_points={
                      'console_scripts': ['syslog_analytics=syslog_analytics.main:main'],
                  },
@@ -16,6 +16,7 @@ setuptools.setup(name='syslog_analytics',
                  author_email='lee.raulin.ctr@dot.gov',
                  license='MIT',
                  packages=setuptools.find_packages(),
+                 install_requires=['dateparser'],
                  classifiers=[
                      "Programming Language :: Python :: 3",
                      "License :: OSI Approved :: MIT License",
