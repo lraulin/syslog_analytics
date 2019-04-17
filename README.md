@@ -44,6 +44,20 @@ Process csv files in the format:
 
 ## Usage
 
+    usage: syslog_analytics [-h] [-v] [files [files ...]]
+
+    Process one or more csv files. Save results to output.csv in the current
+    directory.
+
+    positional arguments:
+      files          one or more csv files to process
+
+    optional arguments:
+      -h, --help     show this help message and exit
+      -v, --version  display version number
+
+### Example
+
     syslog_analytics *.csv
 
 Arguments will be treated as a list of csv files to be processed. The results from all files will be combined into a single output file, sorted by date/time.
