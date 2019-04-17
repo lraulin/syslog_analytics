@@ -40,7 +40,10 @@ Process csv files in the format:
 
 ## Installation
 
-    python3 -m pip install -U --index-url https://test.pypi.org/simple/ syslog_analytics
+    python3 -m pip install -U dateparser
+    python3 -m pip install -U --no-deps --index-url https://test.pypi.org/simple/ syslog_analytics
+
+Assumes Python 3 and Pip for Python 3 are installed. (The dependency needs to be installed manually, because I published to the 'test' repository instead of the main one, and pip apparently has trouble using different sources at the same time.)
 
 ## Usage
 
