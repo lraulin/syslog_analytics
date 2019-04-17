@@ -43,7 +43,7 @@ Process csv files in the format:
     python3 -m pip install -U dateparser
     python3 -m pip install -U --no-deps --index-url https://test.pypi.org/simple/ syslog_analytics
 
-Assumes [Python 3](https://www.python.org/downloads/) and [Pip for Python 3](https://docs.python.org/3/installing/index.html) (usually installed automatically with Python) are installed. (The dependency needs to be installed manually, because I published to the 'test' repository instead of the main one, and pip apparently has trouble using different sources at the same time.)
+Assumes [Python 3](https://www.python.org/downloads/) and [Pip for Python 3](https://docs.python.org/3/installing/index.html) (usually installed automatically with Python) are installed. (The 'dateparser' dependency needs to be installed manually, because I published to the 'test' repository instead of the main one, and pip apparently has trouble using different sources at the same time.)
 
 ## Usage
 
