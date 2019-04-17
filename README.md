@@ -46,7 +46,7 @@ Process csv files in the format:
 
     syslog_analytics *.csv
 
-Arguments will be treated as a list of csv files to be processed. The results from all files will be combined into a single output file.
+Arguments will be treated as a list of csv files to be processed. The results from all files will be combined into a single output file, sorted by date/time.
 
 ## Assumptions
 
